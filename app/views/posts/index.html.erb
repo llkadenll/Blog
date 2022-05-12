@@ -1,15 +1,16 @@
 <h1>Posts</h1>
 
-<ul>
-  <% @posts.each do |post| %>
-  <li>
-    <%= link_to post.title, post %>
-  </li>
-  <% end %>
-</ul>
+<% if !user_signed_in? %>
+  <%= link_to "Sign in to add new posts", user_session_path, class: "sign-in-to-add" %>
+<% end %>
 
-<% if user_signed_in? %>
-  <%= link_to "New Post", new_post_path %>
-<% else %>
-  <%= link_to "Zaloguj się, aby dodawać posty", user_session_path %>
+<% @posts.each do |post| %> 
+  <div class="card bg-light mb-3">
+    <div class="card-header"><%= post.created_at.strftime("%d-%m-%y").to_s.split[0] %> by <%= "Author" %></div>
+    <div class="card-body">
+      <h5 class="card-title"><%= post.title %></h5>
+      <p class="card-text"><%= post.body.length >= 700 ? post.body[..700]+'...' : post.body %></p>
+      <%= link_to "Read", post, class: "btn btn-outline-primary"%>
+    </div>
+  </div>
 <% end %>

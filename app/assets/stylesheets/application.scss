@@ -1,2 +1,118 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+body {
+  background-color: #eeeeee;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 10%;
+}
+
+.navbar {
+  margin-left: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.post {
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: justify;
+}
+
+.post-title {
+  text-align: center;
+}
+
+.post-body {
+  margin: 40px 0px;
+  font-size: large;
+}
+
+ul.buttons {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn {
+  width: 250px;
+  padding: 10px 0px;
+}
+
+.btn-outline-primary {
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.form-control {
+  resize: none;
+  font-size: large;
+  padding: 10px 15px;
+}
+
+form div input.btn.btn-success {
+  width: 100%;
+  padding: 15px 0;
+  font-size: larger;
+}
+
+.card {
+  width: 70%;
+  opacity: 0.9;
+}
+
+.card-title {
+  font-size: 25px;
+}
+
+a {
+  text-decoration: none;
+  margin: 10px 0px 20px;
+}
+
+.sign-in-to-add {
+  font-size: larger;
+}
+
+.login-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-texts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-primary {
+  width: 100%;
+}
+
+.alert-secondary {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+body {
+  background-image: image-url('background-img');
+  background-position: right;
+  background-size: cover;
+  background-attachment: fixed;
+}
