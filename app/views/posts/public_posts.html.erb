@@ -1,0 +1,11 @@
+<h1>Public posts</h1>
+
+<% if !user_signed_in? %>
+  <%= link_to "Sign in to add new posts", user_session_path, class: "sign-in-to-add" %>
+<% end %>
+
+<% @posts.each do |post| %> 
+  <% if post.public %>
+    <%= render "post", post: post %>
+  <% end %>
+<% end %>

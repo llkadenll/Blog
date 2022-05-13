@@ -71,7 +71,7 @@ ul.buttons {
 }
 
 form div input.btn.btn-success {
-  width: 100%;
+  width: 70%;
   padding: 15px 0;
   font-size: larger;
 }
@@ -79,6 +79,18 @@ form div input.btn.btn-success {
 .card {
   width: 70%;
   opacity: 0.9;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.badge-secondary {
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .card-title {
@@ -120,4 +132,25 @@ body {
   background-position: right;
   background-size: cover;
   background-attachment: fixed;
+}
+
+.form-create {
+  display: flex;
+  width: 100%;
+}
+
+.form-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 60px;
+  background-color: white;
+  border-radius: 5px 0px 0px 5px;
+  margin: 0;
+  width: 30%;
+}
+
+.form-check-input {
+  transform: scale(1.5);
+  margin-right: 25px;
 }

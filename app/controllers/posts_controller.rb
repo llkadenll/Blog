@@ -3,7 +3,11 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all
+    if !user_signed_in?
+      redirect_to "/public_posts/"
+    else
+      @posts = Post.all
+    end
   end
 
   def show
@@ -16,6 +20,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
 
+    @post.author_id = current_user.id
     if @post.save
       redirect_to @post
     else
@@ -38,6 +43,10 @@ class PostsController < ApplicationController
     @post.destroy
 
     redirect_to root_path, status: :see_other
+  end
+
+  def public_posts
+    @posts = Post.all
   end
 
   private

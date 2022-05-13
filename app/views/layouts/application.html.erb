@@ -29,6 +29,9 @@
               <%= link_to 'New post', new_post_path, class: "nav-link" %>
             </li>
             <li class="nav-item">
+              <%= link_to 'Public posts', "/public_posts", class: "nav-link" %>
+            </li>
+            <li class="nav-item">
               <%= link_to 'Sign out', destroy_user_session_path, class: "nav-link" %>
               <%# w device.rb linia config.sign_out_via = :get, zmiana z :delete
                   Zamiast tego mozna pozostawic tamta linie i uzyc button_to zamiast link_to %>

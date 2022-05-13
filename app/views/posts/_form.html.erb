@@ -15,7 +15,12 @@
     <% end %>
   </div>
 
-  <div>
-    <%= form.submit class: "btn btn-success"%>
+  <div class="form-create">
+    <div class="form-check form-switch">
+      <%= form.check_box :public, class: "form-check-input" %>
+      <%= form.label :public, "Public post" %>
+    </div>
+      <%= form.submit class: "btn btn-success"%>
   </div>
+
 <% end %>
