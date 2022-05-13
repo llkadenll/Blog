@@ -49,6 +49,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def search
+    @posts = Post.all
+    @query = params[:query]
+  end
+
   private
     def set_post
       @post = Post.find(params[:id])
