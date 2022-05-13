@@ -66,6 +66,10 @@ ul.buttons {
   padding: 10px 15px;
 }
 
+.is-invalid::placeholder {
+  color: red;
+}
+
 form div input.btn.btn-success {
   width: 100%;
   padding: 15px 0;

@@ -1,15 +1,14 @@
 <%= form_with data:{ turbo_confirm: 'Are you sure?' }, model: post do |form| %>
   <div>
-    <% if post.errors.full_messages_for(:title) != [] %>
+    <% if post.errors.messages_for(:title).any? %>
       <%= form.text_field :title, size: "85x1", placeholder: "Invalid title", class: "form-control is-invalid" %>
-      <label for="floatingInputInvalid">Invalid input</label>
     <% else %>
       <%= form.text_field :title, size: "85x1", placeholder: "Title", class: "form-control" %>
     <% end %>
   </div>
 
   <div>
-    <% if post.errors.full_messages_for(:body) != [] %>
+    <% if post.errors.messages_for(:body).any? %>
       <%= form.text_area :body, size: "85x18", placeholder: "Invalid content", class: "form-control is-invalid" %>
     <% else %>
       <%= form.text_area :body, size: "85x18", placeholder: "Content", class: "form-control" %>
