@@ -1,15 +1,18 @@
 <%= form_with data:{ turbo_confirm: 'Are you sure?' }, model: post do |form| %>
   <div>
-    <%= form.text_field :title, size: "85x1", placeholder: "Title", class: "form-control" %>
-    <% post.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
+    <% if post.errors.full_messages_for(:title) != [] %>
+      <%= form.text_field :title, size: "85x1", placeholder: "Invalid title", class: "form-control is-invalid" %>
+      <label for="floatingInputInvalid">Invalid input</label>
+    <% else %>
+      <%= form.text_field :title, size: "85x1", placeholder: "Title", class: "form-control" %>
     <% end %>
   </div>
 
   <div>
-    <%= form.text_area :body, size: "85x18", placeholder: "Content", class: "form-control" %>
-    <% post.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
+    <% if post.errors.full_messages_for(:body) != [] %>
+      <%= form.text_area :body, size: "85x18", placeholder: "Invalid content", class: "form-control is-invalid" %>
+    <% else %>
+      <%= form.text_area :body, size: "85x18", placeholder: "Content", class: "form-control" %>
     <% end %>
   </div>
 
