@@ -12,7 +12,16 @@ body {
 }
 
 .navbar {
-  margin-left: 20px;
+  margin: 0px 20px;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  gap: 25px;
+  font-weight: 500;
 }
 
 .container {
