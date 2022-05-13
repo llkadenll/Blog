@@ -2,7 +2,7 @@
 @import "bootstrap";
 
 body {
-  background-color: #eeeeee;
+  background-color: #f3fdfd;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -47,7 +47,7 @@ body {
 
 .post-body {
   margin: 40px 0px;
-  font-size: large;
+  font-size: 100px;
 }
 
 ul.buttons {
@@ -138,8 +138,8 @@ a {
 
 body {
   background-image: image-url('background-img');
-  background-position: right;
   background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
