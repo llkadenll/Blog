@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get "/search", to: "posts#search"
   devise_for :users
   resources :posts
+  resources :categories, only: [ :index, :show ]
 end

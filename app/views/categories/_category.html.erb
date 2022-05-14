@@ -1,0 +1,9 @@
+<!--<div class="card<%= " border-" + category.color + " mb-3 bg-transparent"%>"> -->
+<!--
+  <div class="category card border-<%= category.color %> mb-3 bg-transparent">
+    <div class="card-body text-<%= category.color %>">
+      <i class="fa <%= category.icon %>"></i> <%= category.name %>
+    </div>
+  </div>
+-->
+<%= link_to "<i class='fa #{category.icon}'></i> #{category.name}".html_safe, category_path(category), class: "category btn btn-outline-#{category.color}" %>

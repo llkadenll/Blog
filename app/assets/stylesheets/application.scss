@@ -65,7 +65,15 @@ ul.buttons {
   padding: 10px 0px;
 }
 
-.btn-outline-primary {
+.btn-outline-warning:hover {
+  color: white;
+}
+
+.btn-outline-info:hover {
+  color: white;
+}
+
+.card-body .btn-outline-primary {
   width: 100%;
   margin-bottom: 0;
 }
@@ -100,15 +108,20 @@ ul.buttons {
   color: red;
 }
 
-form div input.btn.btn-success {
-  width: 70%;
+.btn-success {
+  width: 100%;
   padding: 15px 0;
   font-size: larger;
 }
 
+.cat-select {
+  width: 70%;
+  padding: 15px 15px;
+  font-size: medium;
+}
+
 .card {
   width: 70%;
-  opacity: 0.9;
 }
 
 .card-header {
@@ -121,6 +134,7 @@ form div input.btn.btn-success {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 16px;
 }
 
 .card-title {
@@ -192,4 +206,20 @@ body {
 
 h1 {
   font-weight: 200;
+}
+
+.categories {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.category {
+  width: 40%;
+  padding: 15px 0px;
+  text-align: center;
+  justify-content: center;
+  font-size: larger;
 }

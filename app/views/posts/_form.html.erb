@@ -9,9 +9,9 @@
 
   <div>
     <% if post.errors.messages_for(:body).any? %>
-      <%= form.text_area :body, size: "85x18", placeholder: "Invalid content", class: "form-control is-invalid" %>
+      <%= form.text_area :body, size: "85x16", placeholder: "Invalid content", class: "form-control is-invalid" %>
     <% else %>
-      <%= form.text_area :body, size: "85x18", placeholder: "Content", class: "form-control" %>
+      <%= form.text_area :body, size: "85x16", placeholder: "Content", class: "form-control" %>
     <% end %>
   </div>
 
@@ -20,7 +20,13 @@
       <%= form.check_box :public, class: "form-check-input" %>
       <%= form.label :public, "Public post" %>
     </div>
-      <%= form.submit class: "btn btn-success"%>
+    <% if categories.present? %>
+      <%= form.select :category_id, categories.collect { |c| [c.name, c.id] }, { :include_blank => 'Category:' }, class: "form-control cat-select" %>
+    <% else %>
+      <%= form.select :category_id, [], { :include_blank => 'Category:' }, class: "form-control cat-select" %>
+    <% end %>
   </div>
+
+  <%= form.button class: "btn btn-success"%>
 
 <% end %>
