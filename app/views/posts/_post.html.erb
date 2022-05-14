@@ -1,13 +1,19 @@
 <div class="card bg-light mb-3">
   <div class="card-header">
     <%= post.created_at.strftime("%d-%m-%y").to_s.split[0] %> by <%= User.find(post.author_id).email %>
-    <span class="badge badge-secondary">
-      <% if post.public %>
-        <%= "Public" %>
-      <% else %>
-        <%= "Private" %>
+    
+    <div style="display:flex; justify-content: flex-end">
+      <% if post.category.present? %>
+        <span class=<%= "text-"+post.category.color %>><i class="fa <%= post.category.icon %>"></i> <%= post.category.name %></span>
       <% end %>
-    </span>
+      <span class="badge badge-secondary">
+        <% if post.public %>
+          <%= "Public" %>
+        <% else %>
+          <%= "Private" %>
+        <% end %>
+      </span>
+    </div>
   </div>
   <div class="card-body">
     <h5 class="card-title"><%= post.title %></h5>
