@@ -1,4 +1,5 @@
-<%= form_with data:{ turbo_confirm: 'Are you sure?' }, model: post do |form| %>
+<%#= form_with data:{ controller: "autosubmit", action: "input->autosubmit#submit", turbo_confirm: 'Are you sure?' }, model: post do |form| %>
+<%= form_with data:{ controller: "autosubmit", action: "input->autosubmit#submit"}, model: post do |form| %>
   <div>
     <% if post.errors.messages_for(:title).any? %>
       <%= form.text_field :title, size: "85x1", placeholder: "Invalid title", class: "form-control is-invalid" %>
@@ -27,6 +28,10 @@
     <% end %>
   </div>
 
-  <%= form.button class: "btn btn-success"%>
-
+  <div id="create" class="btn btn-success"></div>
+  <%= form.button class: "btn btn-success", id: "confirm" %>
+  <%= form.button "Validate", formaction: preview_posts_path, name: "_method", value: "post", data: { autosubmit_target: "submitbutton" }, class: "btn-validate" %>
+  
 <% end %>
+
+<div id="preview"></div>

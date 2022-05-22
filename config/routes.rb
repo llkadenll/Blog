@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get "/public_posts/", to: "posts#public_posts"
   get "/search", to: "posts#search"
   devise_for :users
-  resources :posts
+  resources :posts do
+    collection do # for async form validation
+      post :preview
+    end
+  end
   resources :categories, only: [ :index, :show ]
 end

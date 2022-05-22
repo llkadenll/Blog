@@ -56,6 +56,14 @@ class PostsController < ApplicationController
     @query = params[:query]
   end
 
+  def preview # for async form validation
+    @preview_post = Post.new(post_params)
+    # redirect_to request.url, notice: "#{@preview_post.valid?} #{@preview_post.errors.full_messages}"
+    respond_to do |format|
+      format.turbo_stream
+    end
+  end
+
   private
     def set_post
       @post = Post.find(params[:id])
