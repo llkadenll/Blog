@@ -1,23 +1,31 @@
-<h1>Sign up</h1>
+<h1 class="login-header">Sign up</h1>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%#= render "devise/shared/error_messages", resource: resource %>
 
   <div class="login-fields">
     <div class="field">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", size: "40", placeholder: "Email" %>
-    </div>
-
-    <div class="field">
-      <% if @minimum_password_length %>
-        <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Password (#{@minimum_password_length} characters minimum)"%>
+      <% if resource.errors.messages_for(:email).any? %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control is-invalid", size: "40", placeholder: "Email" %>
       <% else %>
-        <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Password"%>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", size: "40", placeholder: "Email" %>
       <% end %>
     </div>
 
     <div class="field">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Password confirmation" %>
+      <% if resource.errors.messages_for(:email).any? %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control is-invalid", placeholder: "Password (#{@minimum_password_length} characters minimum)"%>
+      <% else %>
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder: "Password (#{@minimum_password_length} characters minimum)"%>
+      <% end %>
+    </div>
+
+    <div class="field">
+      <% if resource.errors.messages_for(:password_confirmation).any? %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control is-invalid", placeholder: "Password confirmation" %>
+      <% else %>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Password confirmation" %>
+      <% end %>
     </div>
 
     <div class="actions">
@@ -28,4 +36,7 @@
       <div class="alert alert-secondary">Already have an account? <%= link_to "Log in", new_session_path(resource_name) %>.</div>
     <% end %>
   </div>
+
+  <%= render "devise/shared/error_preview", resource: resource %>
+
 <% end %>

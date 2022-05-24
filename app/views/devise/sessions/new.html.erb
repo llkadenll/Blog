@@ -1,13 +1,18 @@
-<h1>Log in</h1>
+<h1 class="login-header">Log in</h1>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
   <div class="login-fields">
     <div class="field">
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", size: "40", placeholder: "Email" %>
     </div>
 
     <div class="field">
-      <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password" %>
+      <% if resource.errors.messages_for(:password).any? %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control is-invalid", placeholder: "Password" %>
+      <% else %>
+        <%= f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "Password" %>
+      <% end %>
     </div>
 
     <div class="field login-texts">
@@ -32,4 +37,5 @@
       <div class="alert alert-secondary">New to Blog? <%= link_to "Sign up", new_registration_path(resource_name) %>.</div><br />
     <% end %>
   </div>
+
 <% end %>
