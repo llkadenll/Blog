@@ -53,7 +53,7 @@ class PostsController < ApplicationController
 
   def search
     @posts = Post.all
-    @query = params[:query]
+    @query = params[:query].downcase
   end
 
   def preview # for async form validation
