@@ -21,7 +21,7 @@
       <%= form.label :public, "Public post" %>
     </div>
     <% if categories.present? %>
-      <%= form.select :category_id, categories.collect { |c| [c.name, c.id] }, { :include_blank => 'Category:' }, class: "form-control cat-select" %>
+      <%= form.select :category_id, categories.collect { |c| [c.name.capitalize, c.id] }, { :include_blank => 'Category:' }, class: "form-control cat-select" %>
     <% else %>
       <%= form.select :category_id, [], { :include_blank => 'Category:' }, class: "form-control cat-select" %>
     <% end %>
