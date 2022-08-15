@@ -72,7 +72,7 @@ class PostsController < ApplicationController
     end
 
     def set_posts
-      @posts = Post.all.order(updated_at: :desc)
+      @pagy, @posts = pagy(Post.all.order(updated_at: :desc))
     end
 
     def set_categories
