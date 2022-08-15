@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_posts, only: %i[ index public_posts search ]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
     if !user_signed_in?
       redirect_to "/public_posts/"
-    else
-      @posts = Post.all
     end
   end
 
@@ -47,12 +46,7 @@ class PostsController < ApplicationController
     redirect_to root_path, status: :see_other
   end
 
-  def public_posts
-    @posts = Post.all
-  end
-
   def search
-    @posts = Post.all
     @query = params[:query].downcase
   end
 
@@ -67,6 +61,10 @@ class PostsController < ApplicationController
   private
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    def set_posts
+      @posts = Post.all.order(updated_at: :desc)
     end
 
     def post_params
