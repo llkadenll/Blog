@@ -19,12 +19,14 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-
     @post.user = current_user
-    if @post.save
-      redirect_to @post, notice: "Post was successfully created."
-    else
-      render :new, status: :unprocessable_entity
+    
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to @post, notice: "Post was successfully created." }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
     end
   end
 
@@ -32,17 +34,21 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
-      redirect_to @post, notice: "Post was successfully updated."
-    else
-      render :edit, status: :unprocessable_entity
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to @post, notice: "Post was successfully updated." }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+      end
     end
   end
 
   def destroy
     @post.destroy
 
-    redirect_to root_path, status: :see_other, notice: "Post was successfully destroyed."
+    respond_to do |format|
+      format.html { redirect_to root_path, status: :see_other, notice: "Post was successfully destroyed." }
+    end
   end
 
   def search
