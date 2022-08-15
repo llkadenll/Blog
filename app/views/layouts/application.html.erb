@@ -13,12 +13,7 @@
   <body>
     <div>
       <%= render partial: 'layouts/navbar' %>
-      
-      <% flash.each do |type, msg| %>
-        <div class="alert alert-warning">
-          <%= msg %>
-        </div>
-      <% end %>
+      <%= render partial: 'layouts/alert' if flash.keys.any? %>
     </div>
 
     <div class="container">
