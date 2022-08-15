@@ -1,6 +1,6 @@
 <div class="card bg-light mb-3">
   <div class="card-header">
-    <%= post.created_at.strftime("%d-%m-%y").to_s.split[0] %> by <%= User.find(post.author_id).email %>
+    <%= post.created_at.strftime("%d-%m-%y").to_s.split[0] %> by <%= post.user.email %>
     
     <div style="display:flex; justify-content: flex-end">
       <% if post.category.present? %>

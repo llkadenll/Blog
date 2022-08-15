@@ -1,7 +1,7 @@
 <h1>Your posts</h1>
 
 <% @posts.each do |post| %> 
-  <% if post.author_id == current_user.id %>
+  <% if post.user == current_user %>
     <%= render "post", post: post %>
   <% end %>
 <% end %>

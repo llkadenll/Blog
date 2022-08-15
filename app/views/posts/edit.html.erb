@@ -1,4 +1,4 @@
-<% if current_user.id != @post.author_id %>
+<% if current_user != @post.user %>
   <%= render "403"%>
 <% else %>
 <h1>Edit Post</h1>

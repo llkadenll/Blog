@@ -1,11 +1,11 @@
-<% if (!@post.public && (!user_signed_in? || (current_user.id != @post.author_id))) %>
+<% if (!@post.public && (!user_signed_in? || (current_user != @post.user))) %>
   <%= render "403"%>
 <% else %>
   <div class="post">
     <h1 class="post-title"><%= @post.title %></h1>
     <p class="post-body"><%= simple_format(@post.body) %></p>
 
-    <% if user_signed_in? && current_user.id == @post.author_id %>
+    <% if user_signed_in? && current_user == @post.user %>
       <ul class="buttons">
         <li><%= link_to "Edit", edit_post_path(@post), class: "btn btn-outline-success"%></li>
         <li><%= link_to "Delete", post_path(@post), class: "btn btn-outline-danger", data: {

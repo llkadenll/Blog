@@ -1,8 +1,8 @@
 <h1>Search for <%= @query %>:</h1>
 
 <% @posts.each do |post| %> 
-  <% if (user_signed_in? && post.author_id == current_user.id && (post.title.downcase.include?(@query) || post.body.downcase.include?(@query))) ||
-        ((!user_signed_in? || post.author_id != current_user.id) && post.public && (post.title.downcase.include?(@query) || post.body.downcase.include?(@query))) %>
+  <% if (user_signed_in? && post.user == current_user && (post.title.downcase.include?(@query) || post.body.downcase.include?(@query))) ||
+        ((!user_signed_in? || post.user != current_user) && post.public && (post.title.downcase.include?(@query) || post.body.downcase.include?(@query))) %>
     <%= render "post", post: post %>
   <% end %>
 <% end %>

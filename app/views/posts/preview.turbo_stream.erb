@@ -1,10 +1,10 @@
 <%= turbo_stream.update :preview do %>
-  <% if (not @preview_post.valid?) || Post.where(title: @preview_post.title, author_id: current_user.id).exists? %>
+  <% if (not @preview_post.valid?) || Post.where(title: @preview_post.title, user: current_user).exists? %>
     <div class="card text-white bg-danger mb-3 card-errors">
       <div class="card-header">Errors</div>
       <div class="card-body">
         <ul>
-          <% if Post.where(title: @preview_post.title, author_id: current_user.id).exists? %>
+          <% if Post.where(title: @preview_post.title, user: current_user).exists? %>
             <li class="card-text"><%= "You've already created a post with this title" %></li>
           <% end %>
           <% @preview_post.errors.full_messages.each do |message| %>

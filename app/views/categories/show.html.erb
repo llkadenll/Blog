@@ -2,8 +2,8 @@
 
 
 <% @posts.each do |post| %>
-  <% if (user_signed_in? && post.author_id == current_user.id) ||
-        ((!user_signed_in? || post.author_id != current_user.id) && post.public) %>
+  <% if (user_signed_in? && post.user == current_user) ||
+        ((!user_signed_in? || post.user != current_user) && post.public) %>
         <%= render "/posts/post", post: post %>
   <% end %>
 <% end %>
