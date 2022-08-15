@@ -51,8 +51,17 @@ class PostsController < ApplicationController
   end
 
   def preview # for async form validation
-    @preview_post = Post.new(post_params)
-    # redirect_to request.url, notice: "#{@preview_post.valid?} #{@preview_post.errors.full_messages}"
+    if Post.exists?(params[:post_id])
+      @preview_post = Post.find(params[:post_id])
+      @preview_post.title = params[:post][:title]
+      @preview_post.body = params[:post][:body]
+      @preview_post.public = params[:post][:public]
+      @preview_post.category_id = params[:post][:category_id]
+    else
+      @preview_post = Post.new(post_params)
+      @preview_post.user = current_user
+    end
+
     respond_to do |format|
       format.turbo_stream
     end
