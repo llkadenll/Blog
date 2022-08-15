@@ -1,0 +1,23 @@
+.categories {
+  width: 60%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.category {
+  width: 40%;
+  padding: 15px 0px;
+  text-align: center;
+  justify-content: center;
+  font-size: larger;
+}
+
+.btn-outline-warning:hover {
+  color: white;
+}
+
+.btn-outline-info:hover {
+  color: white;
+}

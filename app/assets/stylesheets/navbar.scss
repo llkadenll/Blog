@@ -1,0 +1,21 @@
+.navbar {
+  margin: 0px 20px;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  gap: 25px;
+  font-weight: 500;
+}
+
+.nav-link, .navbar-brand, .form-inline {
+  margin: 5px 0px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+}

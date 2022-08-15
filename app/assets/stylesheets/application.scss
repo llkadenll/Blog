@@ -1,6 +1,12 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import "font-awesome";
+@import "navbar";
+@import "search_field";
+@import "devise";
+@import "post";
+@import "category";
+@import "error_preview";
 
 body {
   background-color: white;
@@ -10,28 +16,11 @@ body {
   display: flex;
   flex-direction: column;
   gap: 5%;
-}
 
-.navbar {
-  margin: 0px 20px;
-}
-
-.navbar-collapse {
-  justify-content: flex-end;
-}
-
-.navbar-nav {
-  gap: 25px;
-  font-weight: 500;
-}
-
-.nav-link, .navbar-brand, .form-inline {
-  margin: 5px 0px;
-}
-
-.nav-item {
-  display: flex;
-  align-items: center;
+  background-image: image-url('background-img');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .container {
@@ -42,209 +31,11 @@ body {
   padding-bottom: 20px;
 }
 
-.login-header {
-  margin-top: 42px;
-}
-
-.post {
-  max-width: 70%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  text-align: justify;
-}
-
-.post-title {
-  text-align: center;
-}
-
-.post-body {
-  margin: 40px 0px;
-  font-size: 100px;
-}
-
-ul.buttons {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.btn {
-  width: 250px;
-  padding: 10px 0px;
-}
-
-.btn-outline-warning:hover {
-  color: white;
-}
-
-.btn-outline-info:hover {
-  color: white;
-}
-
-.card-body .btn-outline-primary {
-  width: 100%;
-  margin-bottom: 0;
-}
-
-.form-control {
-  resize: none;
-  font-size: large;
-  padding: 10px 15px;
-}
-
-.form-search {
-  font-size: 1rem;
-  border-radius: 0.25rem 0 0 0.25rem;
-}
-
-.form-inline {
-  display: flex;
-  align-items: center;
-  height: 40px;
-  font-size: 100px;
-}
-
-.btn-search {
-  padding: 10px 15px;
-  width: 46px;
-  border-radius: 0px 0.25rem 0.25rem 0px;
-  font-family: icon;
-}
-
-.is-invalid::placeholder {
-  color: red;
-}
-
-.btn-success {
-  width: 100%;
-  padding: 15px 0;
-  font-size: larger;
-}
-
-.cat-select {
-  width: 70%;
-  padding: 15px 15px;
-  font-size: medium;
-}
-
-.card {
-  width: 70%;
-}
-
-.card-header {
-  display: flex;
-  justify-content: space-between;
-}
-
-.badge-secondary {
-  background-color: gray;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 16px;
-}
-
-.card-title {
-  font-size: 25px;
+h1 {
+  font-weight: 200;
 }
 
 a {
   text-decoration: none;
   margin: 10px 0px 20px;
-}
-
-.sign-in-to-add {
-  font-size: larger;
-}
-
-.login-fields {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.login-texts {
-  display: flex;
-  justify-content: space-between;
-}
-
-.btn-primary {
-  width: 100%;
-}
-
-.alert-secondary {
-  width: 100%;
-  margin-top: 20px;
-  text-align: center;
-}
-
-body {
-  background-image: image-url('background-img');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
-.form-create {
-  display: flex;
-  width: 100%;
-}
-
-.form-check {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 60px;
-  background-color: white;
-  border-radius: 5px 0px 0px 5px;
-  margin: 0;
-  width: 30%;
-}
-
-.form-check-input {
-  transform: scale(1.5);
-  margin-right: 25px;
-}
-
-.remember-me-checkbox {
-  margin: 4px;
-  margin-right: 8px;
-}
-
-h1 {
-  font-weight: 200;
-}
-
-.categories {
-  width: 60%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 50px;
-}
-
-.category {
-  width: 40%;
-  padding: 15px 0px;
-  text-align: center;
-  justify-content: center;
-  font-size: larger;
-}
-
-#preview {
-  position: fixed;
-  bottom: 43px;
-  right: 10px;
-  width: 20%;
-}
-
-.card-errors {
-  width: 100%;
-  height: 100%;
-  margin: 0;
 }

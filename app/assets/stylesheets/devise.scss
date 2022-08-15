@@ -1,0 +1,37 @@
+.login-header {
+  margin-top: 42px;
+}
+
+.sign-in-to-add {
+  font-size: larger;
+}
+
+.login-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-texts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.is-invalid::placeholder {
+  color: red;
+}
+
+.btn-primary {
+  width: 100%;
+}
+
+.alert-secondary {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.remember-me-checkbox {
+  margin: 4px;
+  margin-right: 8px;
+}
