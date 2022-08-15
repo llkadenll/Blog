@@ -5,17 +5,6 @@ export default class extends Controller {
   static targets = ["submitbutton"]
   connect() {
     this.submitbuttonTarget.hidden = true;
-
-    const create = document.querySelector('#create');
-    const confirm = document.querySelector('#confirm');
-
-    create.textContent = confirm.textContent;
-
-    create.addEventListener('click', () => {
-      create.style['display'] = 'none';
-      confirm.textContent = "Confirm";
-      confirm.style['display'] = 'block';
-    })
   }
 
   submit() {

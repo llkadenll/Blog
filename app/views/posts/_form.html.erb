@@ -27,8 +27,7 @@
     <% end %>
   </div>
 
-  <div id="create" class="btn btn-success"></div>
-  <%= form.button class: "btn btn-success", id: "confirm" %>
+  <%= form.button class: "btn btn-success" %>
   <%= form.button "Validate", formaction: preview_posts_path(post_id: @post.id), name: "_method", value: "post", data: { autosubmit_target: "submitbutton" }, class: "btn-validate" %>
   
 <% end %>
