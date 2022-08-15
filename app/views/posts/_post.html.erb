@@ -4,7 +4,7 @@
     
     <div style="display:flex; justify-content: flex-end">
       <% if post.category.present? %>
-        <span class=<%= "text-"+post.category.color %>><i class="fa <%= post.category.icon %>"></i> <%= post.category.name %></span>
+        <span class=<%= "text-"+post.category.color %>><i class="fa <%= post.category.icon %>"></i> <%= post.category.name.capitalize %></span>
       <% end %>
       <span class="badge badge-secondary">
         <% if post.public %>

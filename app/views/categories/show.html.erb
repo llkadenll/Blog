@@ -1,4 +1,4 @@
-<h1><span class=<%= "text-"+@category.color %>><i class="fa <%= @category.icon %>"></i> <%= @category.name %></span></h1>
+<h1><span class=<%= "text-"+@category.color %>><i class="fa <%= @category.icon %>"></i> <%= @category.name.capitalize %></span></h1>
 
 
 <% @posts.each do |post| %>

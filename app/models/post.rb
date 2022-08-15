@@ -1,7 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :category, optional: true
+  belongs_to :user
 
-  validates :title, presence: true, uniqueness: { scope: :author_id, case_sensitive: false}
+  validates :title, presence: true, uniqueness: { scope: :user, case_sensitive: false}
   validates :body, length: { minimum: 10 }
 
 end
