@@ -69,7 +69,7 @@ class PostsController < ApplicationController
 
   private
     def set_post
-      @post = Post.find(params[:id])
+      @post = user_signed_in? ? current_user.posts.find(params[:id]) : Post.where(public: true).find(params[:id])
     end
 
     def set_posts
