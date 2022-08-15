@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :set_posts, only: %i[ index public_posts search ]
+  before_action :set_categories, only: %i[ new edit ]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def index
@@ -14,7 +15,6 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    @categories = Category.all
   end
 
   def create
@@ -29,7 +29,6 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @categories = Category.all
   end
 
   def update
@@ -74,6 +73,10 @@ class PostsController < ApplicationController
 
     def set_posts
       @posts = Post.all.order(updated_at: :desc)
+    end
+
+    def set_categories
+      @categories = Category.all
     end
 
     def post_params
