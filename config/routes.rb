@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'search', to: 'search#index'
   root "posts#index"
 
   get "/public_posts/", to: "posts#public_posts"
