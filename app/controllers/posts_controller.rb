@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :set_posts, only: %i[ index public_posts search ]
+  before_action :set_posts, only: %i[ index public_posts ]
   before_action :set_categories, only: %i[ new edit ]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
@@ -49,10 +49,6 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to root_path, status: :see_other, notice: "Post was successfully destroyed." }
     end
-  end
-
-  def search
-    @query = params[:query].downcase
   end
 
   def preview # for async form validation
