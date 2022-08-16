@@ -9,17 +9,19 @@ cat_business = Category.create(name: 'business', icon: "fa-money", color: 'info'
 cat_politics = Category.create(name: 'politics', icon: "fa-globe", color: 'secondary')
 
 posts = [
-  {title: 'TOP 5 destinations for holidays', user: user2, category: cat_lifestyle, public: true},
-  {title: 'How to take care of your skin?', user: user1, category: cat_lifestyle, public: false},
   {title: 'My favourite football clubs', user: user2, category: cat_sport, public: true},
   {title: 'TOP 10 waterpolo players', user: user1, category: cat_sport, public: true},
   {title: 'Champions League is coming', user: user1, category: cat_sport, public: true},
+  {title: 'How to improve public health service?', user: user1, category: cat_politics, public: true},
+  {title: 'Left or right?', user: user2, category: cat_politics, public: true},
   {title: 'Electric engines explained', user: user1, category: cat_science, public: true},
   {title: 'Cats and their behaviors', user: user2, category: cat_nature, public: true},
+  {title: 'Why we need more trees in cities?', user: user1, category: cat_nature, public: true},
   {title: 'Make more money working less hours', user: user1, category: cat_business, public: true},
   {title: 'How does real estate work?', user: user2, category: cat_business, public: true},
-  {title: 'How to improve public health service?', user: user1, category: cat_politics, public: true},
-  {title: 'Left or right?', user: user2, category: cat_politics, public: true}
+  {title: 'My favourite Nike shoes', user: user2, category: cat_lifestyle, public: true},
+  {title: 'How to take care of your skin?', user: user1, category: cat_lifestyle, public: false},
+  {title: 'TOP 5 destinations for holidays', user: user2, category: cat_lifestyle, public: true}
 ]
 
 post_body = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque semper nisl vel quam luctus ultricies. Nam et malesuada neque. Mauris fermentum rutrum nunc eget pulvinar. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Maecenas consectetur leo diam, quis bibendum est mollis eget. Cras ut sapien mattis, volutpat turpis vitae, gravida nisi. Pellentesque egestas consequat lorem at auctor. Donec sed ullamcorper nisi.
