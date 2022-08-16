@@ -5,9 +5,7 @@
 <% end %>
 
 <% @posts.each do |post| %> 
-  <% if post.public %>
-    <%= render "post", post: post %>
-  <% end %>
+  <%= render "post", post: post %>
 <% end %>
 
 <%= raw pagy_bootstrap_nav(@pagy) %>

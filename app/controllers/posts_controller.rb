@@ -1,13 +1,15 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
-  before_action :set_posts, only: %i[ index public_posts ]
   before_action :set_categories, only: %i[ new edit ]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: %i[ new create edit update destroy]
 
   def index
-    if !user_signed_in?
-      redirect_to "/public_posts/"
+    unless user_signed_in?
+      redirect_to public_posts_path
+      return
     end
+
+    @pagy, @posts = pagy(current_user.posts.order(updated_at: :desc))
   end
 
   def show
@@ -51,6 +53,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def public_posts
+    @pagy, @posts = pagy(Post.where(public: true).order(updated_at: :desc))
+  end
+
   def preview # for async form validation
     if Post.exists?(params[:post_id])
       @preview_post = Post.find(params[:post_id])
@@ -71,10 +77,6 @@ class PostsController < ApplicationController
   private
     def set_post
       @post = user_signed_in? ? current_user.posts.find(params[:id]) : Post.where(public: true).find(params[:id])
-    end
-
-    def set_posts
-      @pagy, @posts = pagy(Post.all.order(updated_at: :desc))
     end
 
     def set_categories

@@ -1,9 +1,5 @@
 <h1><span class=<%= "text-"+@category.color %>><i class="fa <%= @category.icon %>"></i> <%= @category.name.capitalize %></span></h1>
 
-
 <% @posts.each do |post| %>
-  <% if (user_signed_in? && post.user == current_user) ||
-        ((!user_signed_in? || post.user != current_user) && post.public) %>
-        <%= render "/posts/post", post: post %>
-  <% end %>
+  <%= render "/posts/post", post: post %>
 <% end %>

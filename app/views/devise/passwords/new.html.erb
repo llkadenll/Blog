@@ -1,7 +1,6 @@
 <h1 class="login-header">Forgot your password?</h1>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%#= render "devise/shared/error_messages", resource: resource %>
 
   <div class="login-fields">
     <div class="field">
@@ -12,7 +11,7 @@
       <%= f.submit "Send me reset password instructions", class: "btn btn-primary" %>
     </div>
 
-    <%- if controller_name != 'sessions' %>
+    <% if controller_name != 'sessions' %>
       <div class="alert alert-secondary">Recovered password? <%= link_to "Log in", new_session_path(resource_name) %>.</div>
     <% end %>
   </div>

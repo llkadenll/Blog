@@ -1,9 +1,7 @@
 <h1>Your posts</h1>
 
 <% @posts.each do |post| %> 
-  <% if post.user == current_user %>
-    <%= render "post", post: post %>
-  <% end %>
+  <%= render "post", post: post %>
 <% end %>
 
 <%= raw pagy_bootstrap_nav(@pagy) %>
