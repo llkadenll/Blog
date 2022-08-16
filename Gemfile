@@ -7,6 +7,7 @@ gem 'bootstrap', '~> 5.1.3'
 gem 'devise'
 gem "font-awesome-rails"
 gem 'pagy', '~> 5.10'
+gem 'ransack', :github => 'activerecord-hackery/ransack', :branch => 'main'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
