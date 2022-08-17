@@ -1,17 +1,53 @@
-# README
+# ✳️ Blog Project
 
-Blog application where you can register, create posts and share them or keep them private. You can read through your posts and public posts of other users.
+Blog application made for educational purpose to learn basic features of Ruby On Rails. You can watch it live on [Heroku](https://vast-beach-21113.herokuapp.com/). Most of the functions are available for registered users. To make it simpler you can use the following account: <br>
 
-It is made for educational purpose to learn basic features of Ruby On Rails.
+Email: user@gmail.com <br>
+Password: qwerty
 
-You can watch it live on [Heroku](https://vast-beach-21113.herokuapp.com/). Most of the functions are available for registered users, thus consider creating an account.
+## 🙌 Features
 
-# Technologies
+- Users can register, create posts and share them or keep them private
+- Posts might have its categories. You can see them in the 'Categories' tab
+- You can read your posts and public posts of other users
+- You can edit and delete only your posts
+- The website uses pagination
+- Use search bar to search posts by the content of their title, body or author
+- 👇 When you create a new post there's async validation system to let you know about errors in real time
+<img src="screenshots/async_validation.png" width="50%">
+
+## 🛠 Technologies
 - HTML
 - CSS
 - Bootstrap
+- JS
 - Ruby on Rails
 - PostgreSQL
+
+## 👉 Launching
+Install gems:
+```
+bundle install
+```
+Migrate the database:
+```
+rails db:migrate
+```
+Seed the database:
+```
+rails db:seed
+```
+Run the application:
+```
+rails s
+```
+
+## 🚨 Tests
+
+To run tests:
+```
+rspec
+```
 
 # Screenshots
 <img src="screenshots/1.png" width="49%"> <img src="screenshots/2.png" width="49%">
