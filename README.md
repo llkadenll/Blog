@@ -5,6 +5,11 @@ Blog application made for educational purpose to learn basic features of Ruby On
 Email: user@gmail.com <br>
 Password: qwerty
 
+# Screenshots
+<img src="screenshots/1.png" width="49%"> <img src="screenshots/2.png" width="49%">
+<img src="screenshots/3.png" width="49%"> <img src="screenshots/4.png" width="49%">
+<img src="screenshots/5.png" width="49%"> <img src="screenshots/6.png" width="49%">
+
 ## 🙌 Features
 
 - Users can register, create posts and share them or keep them private
@@ -14,7 +19,7 @@ Password: qwerty
 - The website uses pagination
 - Use search bar to search posts by the content of their title, body or author
 - 👇 When you create a new post there's async validation system to let you know about errors in real time
-<img src="screenshots/async_validation.png" width="50%">
+<img src="screenshots/async_validation.png" width="70%">
 
 ## 🛠 Technologies
 - HTML
@@ -48,8 +53,3 @@ To run tests:
 ```
 rspec
 ```
-
-# Screenshots
-<img src="screenshots/1.png" width="49%"> <img src="screenshots/2.png" width="49%">
-<img src="screenshots/3.png" width="49%"> <img src="screenshots/4.png" width="49%">
-<img src="screenshots/5.png" width="49%"> <img src="screenshots/6.png" width="49%">
