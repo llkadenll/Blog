@@ -18,7 +18,7 @@ Password: qwerty
 - You can edit and delete only your posts
 - The website uses pagination
 - Use search bar to search posts by the content of their title, body or author
-- 👇 When you create a new post there's async validation system to let you know about errors in real time
+- 👇 When you edit or create a new post there's async validation system to let you know about errors in real time
 <img src="screenshots/async_validation.png" width="70%">
 
 ## 🛠 Technologies
