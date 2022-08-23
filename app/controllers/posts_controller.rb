@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: %i[ new create edit update destroy]
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :set_categories, only: %i[ new edit ]
-  before_action :authenticate_user!, only: %i[ new create edit update destroy]
 
   def index
     unless user_signed_in?
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
     @post.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_path, status: :see_other, notice: "Post was successfully destroyed." }
+      format.html { redirect_to posts_path, status: :see_other, notice: "Post was successfully destroyed." }
     end
   end
 
