@@ -1,7 +1,7 @@
 <%= form_with data:{ controller: "autosubmit", action: "input->autosubmit#submit"}, model: post do |form| %>
   <div>
     <% if post.errors.messages_for(:title).any? %>
-      <%= form.text_field :title, size: "85x1", placeholder: "Invalid title", class: "form-control is-invalid" %>
+      <%= form.text_field :title, size: "85x1", placeholder: post.errors.full_messages_for(:title).first, class: "form-control is-invalid" %>
     <% else %>
       <%= form.text_field :title, size: "85x1", placeholder: "Title", class: "form-control" %>
     <% end %>
@@ -9,7 +9,7 @@
 
   <div>
     <% if post.errors.messages_for(:body).any? %>
-      <%= form.text_area :body, size: "85x16", placeholder: "Invalid content", class: "form-control is-invalid" %>
+      <%= form.text_area :body, size: "85x16", placeholder: post.errors.full_messages_for(:body).first, class: "form-control is-invalid" %>
     <% else %>
       <%= form.text_area :body, size: "85x16", placeholder: "Content", class: "form-control" %>
     <% end %>

@@ -5,7 +5,7 @@
   <div class="login-fields">
     <div class="field">
       <% if resource.errors.messages_for(:email).any? %>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control is-invalid", size: "40", placeholder: "Email" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control is-invalid", size: "40", placeholder: resource.errors.full_messages_for(:email).first %>
       <% else %>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", size: "40", placeholder: "Email" %>
       <% end %>
@@ -35,7 +35,5 @@
       <div class="alert alert-secondary">Already have an account? <%= link_to "Log in", new_session_path(resource_name) %>.</div>
     <% end %>
   </div>
-
-  <%= render "devise/shared/error_preview", resource: resource %>
 
 <% end %>
