@@ -1,6 +1,6 @@
 # ✳️ Blog Project
 
-Blog application made for educational purpose to learn basic features of Ruby On Rails. You can play with it live [here](https://misty-sky-9144.fly.dev/). Most of the functions are available for registered users. To make it simpler you can use the following account: <br>
+Blog application made for educational purpose to learn basic features of Ruby On Rails. You can play with it live at [Fly.io](https://misty-sky-9144.fly.dev/). Most of the functions are available for registered users. To make it simpler you can use the following account: <br>
 
 Email: user@gmail.com <br>
 Password: qwerty
